@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+  telebot:
+    image: kosmos666/telebot
+    restart: always
+    links:
+      - db
+    environment:
+      DB_HOST: 127.0.0.1
+      DB_USER: root2
+      DB_PASSWORD: root2
+      TELEGRAM_TOKEN: 1221686129:AAE5LMMmpaOJUkf-JR8TTiXvSMJDM1bxrmM
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_USER: root2
+      MYSQL_PASSWORD: root2
+      MYSQL_DATABASE: SASHA_19
+
+
